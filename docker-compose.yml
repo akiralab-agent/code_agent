@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./firebase-service-account.json:/app/firebase-service-account.json:ro
+    env_file:
+      - .env
+    restart: unless-stopped
